@@ -73,7 +73,7 @@ public class TestController {
         return user;
     }
 
-    @RequestMapping("regist")
+   // @RequestMapping("regist")
     public @ResponseBody String aaatest(){
         try {
             ZookeeperConfig.registerService(client);
@@ -86,7 +86,7 @@ public class TestController {
         }
     }
 
-    @RequestMapping("use")
+    //@RequestMapping("use")
     public @ResponseBody ServiceInstance<Map> atest(){
         try {
             ServiceInstance<Map> book = ZookeeperConfig.findService(client, "book");
