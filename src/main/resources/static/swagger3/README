@@ -1,0 +1,73 @@
+  URI中参数
+  "parameters":
+  {
+    "name":"orderId",
+    "in":"path",
+    "description":"订单id",
+    "required":true
+  }
+  ],
+
+ 查询参数 /order?offset=0
+ "parameters":
+  {
+    "name":"offset",
+    "in":"query",
+    "description":"查询起始位置,
+    "required":true
+  }
+  ],
+
+  HTTP头参数
+ "parameters":
+  {
+    "name":"X-Request-ID",
+    "in":"header",
+    "description":"
+  }
+  ],
+
+ 表单参数
+ "parameters":
+  {
+    "name":"orderName",
+    "in":"formData",
+    "description":""
+  }
+  ],
+
+  文件上传参数
+ "parameters":
+  {
+    "name":"orderName",
+    "in":"formData",
+    "description":"",
+    "type":"file"
+  }
+  ],
+
+  整个请求体作为参数——通常将JSON数据作为HTTP内容体发送到服务器端
+  {
+    "/order":{
+      "post":{
+        "summary":"创建订单",
+        "description":"创建一个新的订单",
+        "parameters":[
+          {
+            "name":"order",
+            "in":"body",
+            "description":"包含订单信息的JSON",
+            "required":true,
+            "schema":{
+              "$ref":"#/definitions/order"
+            }
+          }
+        ],
+        "responses":{
+          "200":{
+            "description":"创建订单成功"
+          }
+        }
+      }
+    }
+  }
